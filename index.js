@@ -1,12 +1,21 @@
 import { WebSocketServer, Server } from 'ws';
 
-// const wss = new WebSocketServer({ port: 8080 });
+const PORT = process.env.PORT || 3000;
+const INDEX = '/index.html';
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+
 const wss = new Server({ server });
 
 wss.on('connection', function connection(ws) {
   ws.on('message', function message(data) {
     console.log('received: %s', data);
   });
+
+  ws.on('close', () => console.log('Client disconnected'));
 
   ws.send('something');
 });

@@ -1,9 +1,30 @@
 {
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
+    "bufferutil": "^4.0.8",
+    "express": "^4.19.2",
+    "utf-8-validate": "^6.0.3",
     "ws": "^8.16.0"
   },
   "scripts": {
     "start": "node index.js"
-  }
+  },
+  "name": "wizard_room_websockets_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nam6711/wizard_room_websockets_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nam6711/wizard_room_websockets_server/issues"
+  },
+  "homepage": "https://github.com/nam6711/wizard_room_websockets_server#readme",
+  "description": ""
 }
