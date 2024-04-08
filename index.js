@@ -24,9 +24,9 @@ wss.on('connection', function connection(ws) {
       console.log('UDP CLIENT CONNECTED');
       UDP_CLIENT.client = ws;
       UDP_CLIENT.connected = true;
-    } else if (UDP_CLIENT.connected && data === "servo") {
+    } else if (UDP_CLIENT.connected) {
       console.log("COMMAND SENT: %s", data);
-      UDP_CLIENT.client.send("servo");
+      UDP_CLIENT.client.send(data);
     }
   });
 
